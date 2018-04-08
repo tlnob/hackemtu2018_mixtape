@@ -1,4 +1,4 @@
-import glob, os, re, json
+import glob, os, re, json, csv
 
 data = 'datasets/gtfs_emtu/'
 
@@ -8,21 +8,22 @@ def unquote(str):
 	else:
 		return str
 
-def parse(fileLines):
+def parse(nomearq):
 	first = True
 	attr = []
 	arr = []
-	for lines in fileLines:
-		if first:
-			attr = [unquote(x) for x in lines.strip().split(',')]
-			first = False
-		else:
-			lines = [unquote(x) for x in lines.strip().split(',')]
-			obj = {}
-			for i in range(len(attr)):
-				obj[attr[i]] = lines[i]
-			arr.append(obj)
+	with open(nomearq) as arq:
+		for line in csv.reader(arq, delimiter=','):
+			if first:
+				attr = line
+				first = False
+			else:
+				obj = {}
+				for i in range(len(attr)):
+					obj[attr[i]] = line[i]
+				arr.append(obj)
 	return arr
+			
 
 def primarykey(db, table, key):
 	arr = db[table]
@@ -41,10 +42,8 @@ def join(db, str, table, key):
 
 db = {}
 for datafile in glob.glob(os.path.join(data, '*.txt')):
-	file = open(datafile, "r")
-	fileLines = file.readlines()
 	table = datafile.replace(data,'')[:-4]
-	db[table] = parse(fileLines)
+	db[table] = parse(datafile)
 
 
 primarykey(db, "trips", "trip_id")
