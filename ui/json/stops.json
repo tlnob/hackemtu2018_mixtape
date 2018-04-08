@@ -1,0 +1,204 @@
+{
+        "100014307": {
+            "stop_desc": "Ref.: R Mendes Junior/ R Mendes Goncalves",
+            "stop_id": "100014307",
+            "stop_lat": "-23.534152",
+            "stop_lon": "-46.614670",
+            "stop_name": "R. Silva Teles, 281"
+        },
+        "100014308": {
+            "stop_desc": "Ref.: R Joao Teodoro/ R Casimiro De Abreu",
+            "stop_id": "100014308",
+            "stop_lat": "-23.535448",
+            "stop_lon": "-46.615946",
+            "stop_name": "R. Silva Teles, 99"
+        },
+        "100014309": {
+            "stop_desc": "Ref.: R Barao De Ladario/ R Rodrigues Dos Santos",
+            "stop_id": "100014309",
+            "stop_lat": "-23.535266",
+            "stop_lon": "-46.619767",
+            "stop_name": "R. Jo\u00e3o Teodoro, 1331"
+        },
+        "100014319": {
+            "stop_desc": "Ref.: R Da Juta/ Vdto Gasometro",
+            "stop_id": "100014319",
+            "stop_lat": "-23.541964",
+            "stop_lon": "-46.617191",
+            "stop_name": "Lgo. Da Concordia, 121",
+            "stop_times": [
+                "407A-10-0"
+            ]
+        },
+        "100014321": {
+            "stop_desc": "Ref.: R Da Juta/ Vdto Gasometro-sentido B/C.",
+            "stop_id": "100014321",
+            "stop_lat": "-23.542019",
+            "stop_lon": "-46.617358",
+            "stop_name": "Lgo. Da Concordia, 125"
+        },
+        "100014322": {
+            "stop_desc": "Av. Rangel Pestana, 1988 Ref.: R Doutor Almeida Lima/ R Joaquim Nabuco",
+            "stop_id": "100014322",
+            "stop_lat": "-23.542754",
+            "stop_lon": "-46.616124",
+            "stop_name": "Parada 2 Concordia"
+        },
+        "100014324": {
+            "stop_desc": "Av. Rangel Pestana, 2118 Ref.: R Joaquim Nabuco/ R Gomes Cardim",
+            "stop_id": "100014324",
+            "stop_lat": "-23.542006",
+            "stop_lon": "-46.614945",
+            "stop_name": "Parada 3 Conc\u00f3rdia"
+        },
+        "100014325": {
+            "stop_desc": "Av. Rangel Pestana, 2169 Ref.: R Gomes Cardim/ R Maria Marcolina",
+            "stop_id": "100014325",
+            "stop_lat": "-23.541697",
+            "stop_lon": "-46.614759",
+            "stop_name": "Parada 1 E 3 - Conc\u00f3rdia"
+        },
+        "100014326": {
+            "stop_desc": "Av. Rangel Pestana, 2200 Ref.: R Gomes Cardim/ R Brig Machado",
+            "stop_id": "100014326",
+            "stop_lat": "-23.541754",
+            "stop_lon": "-46.614466",
+            "stop_name": "Parada 1 Conc\u00f3rdia"
+        },
+        "100014327": {
+            "stop_desc": "Av. Rangel Pestana, 2344 Ref.: R Brigadeiro Machado/ R Do Hip\u00f3dromo",
+            "stop_id": "100014327",
+            "stop_lat": "-23.540944",
+            "stop_lon": "-46.613184",
+            "stop_name": "Parada 2 - Hip\u00f3dromo"
+        },
+        "100014328": {
+            "stop_desc": "Av. Celso Garcia, 60 Ref.: R Doutor Ricardo Gon\u00e7alves/ R Jos\u00e9 De Alencar",
+            "stop_id": "100014328",
+            "stop_lat": "-23.540201",
+            "stop_lon": "-46.611892",
+            "stop_name": "Parada 1 E 3 - Hip\u00f3dromo"
+        },
+        "100014329": {
+            "stop_desc": "Av. Celso Garcia, 109 Ref.: R Rubino De Oliveira/ R Doutor Costa Valente",
+            "stop_id": "100014329",
+            "stop_lat": "-23.539908",
+            "stop_lon": "-46.611319",
+            "stop_name": "Parada 2 - Rubino De Oliveira"
+        },
+        "100014330": {
+            "stop_desc": "Ref.: Av Celso Garcia/ R Doutor Carlos Botelho",
+            "stop_id": "100014330",
+            "stop_lat": "-23.539880",
+            "stop_lon": "-46.611576",
+            "stop_name": "R. Rubino De Oliveira, 33"
+        },
+        "100014331": {
+            "stop_desc": "Ref.: R Casimiro De Abreu/ R Xavantes",
+            "stop_id": "100014331",
+            "stop_lat": "-23.537765",
+            "stop_lon": "-46.614604",
+            "stop_name": "R. Oriente, 760"
+        },
+        "100014332": {
+            "stop_desc": "Ref.: R Miller/ R Maria Marcolina",
+            "stop_id": "100014332",
+            "stop_lat": "-23.537898",
+            "stop_lon": "-46.616724",
+            "stop_name": "R. Oriente, 556"
+        },
+        "100014333": {
+            "stop_desc": "Ref.: R Barao De Ladario/ R Miller",
+            "stop_id": "100014333",
+            "stop_lat": "-23.537980",
+            "stop_lon": "-46.618645",
+            "stop_name": "R. Oriente, 374"
+        },
+        "100014334": {
+            "stop_desc": "Ref.: R Rodrigues Dos Santos/ R Monsenhor Andrade",
+            "stop_id": "100014334",
+            "stop_lat": "-23.538065",
+            "stop_lon": "-46.620639",
+            "stop_name": "R. Oriente, 156"
+        },
+        "100014335": {
+            "stop_desc": "Ref.: R Oriente/ R Henrique Dias",
+            "stop_id": "100014335",
+            "stop_lat": "-23.537738",
+            "stop_lon": "-46.622173",
+            "stop_name": "R. Mons. Andrade, 871"
+        },
+        "100014344": {
+            "stop_desc": "Ref.: R Silva Teles/ R Joao Teodoro",
+            "stop_id": "100014344",
+            "stop_lat": "-23.535778",
+            "stop_lon": "-46.616608",
+            "stop_name": "R. Maria Marcolina, 697"
+        },
+        "100014345": {
+            "stop_desc": "Ref.: Tr Abreu Junior/ R Oriente",
+            "stop_id": "100014345",
+            "stop_lat": "-23.538179",
+            "stop_lon": "-46.616165",
+            "stop_name": "R. Maria Marcolina, 426"
+        },
+        "100014346": {
+            "stop_desc": "Ref.: R Xavantes/ R Conselheiro Belisario",
+            "stop_id": "100014346",
+            "stop_lat": "-23.539474",
+            "stop_lon": "-46.615971",
+            "stop_name": "R. Maria Marcolina, 284"
+        },
+        "100014347": {
+            "stop_desc": "Ref.: R Ministro Firmino Whitaker/ Av Rangel Pestana",
+            "stop_id": "100014347",
+            "stop_lat": "-23.541504",
+            "stop_lon": "-46.616459",
+            "stop_name": "Lgo. Da Concordia, 120"
+        },
+        "100014348": {
+            "stop_desc": "Ref.: R Bar\u00e3o De Lad\u00e1rio / R Miler",
+            "stop_id": "100014348",
+            "stop_lat": "-23.541560",
+            "stop_lon": "-46.616931",
+            "stop_name": "Lgo. Da Concordia"
+        },
+        "100014349": {
+            "stop_desc": "Ref.: Rua Bar\u00e3o De Lad\u00e1rio / Rua Miler",
+            "stop_id": "100014349",
+            "stop_lat": "-23.541453",
+            "stop_lon": "-46.616813",
+            "stop_name": "Lgo. Da Concordia"
+        },
+        "100014350": {
+            "stop_desc": "Ref.: R Henrique Dias/ R Julio Ribeiro",
+            "stop_id": "100014350",
+            "stop_lat": "-23.536922",
+            "stop_lon": "-46.619017",
+            "stop_name": "R. Br. De Lad\u00e1rio, 485"
+        },
+        "100014351": {
+            "stop_desc": "Ref.: R Conselheiro Belisario/ R Da Juta",
+            "stop_id": "100014351",
+            "stop_lat": "-23.540448",
+            "stop_lon": "-46.618431",
+            "stop_name": "R. Br. De Lad\u00e1rio, 195",
+            "stop_times": [
+                "2105-10-0"
+            ]
+        },
+        "100014353": {
+            "stop_desc": "Ref.: R Julio Ribeiro/ R Joao Teodoro",
+            "stop_id": "100014353",
+            "stop_lat": "-23.536283",
+            "stop_lon": "-46.617722",
+            "stop_name": "R. Miller, 584"
+        },
+        "100014356": {
+            "stop_desc": "Ref.: R Major Marcelino/ R Almirante Barroso",
+            "stop_id": "100014356",
+            "stop_lat": "-23.535615",
+            "stop_lon": "-46.610316",
+            "stop_name": "R. Bresser, 542"
+        }
+}
