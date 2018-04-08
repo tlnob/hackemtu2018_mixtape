@@ -1,7 +1,4 @@
 import glob, os, re, json
-#import pandas as pd
-#import numpy as np
-
 
 data = 'datasets/gtfs_emtu/'
 
