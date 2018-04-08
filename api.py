@@ -1,6 +1,9 @@
 import glob, os, re, json
+#import pandas as pd
+#import numpy as np
 
-data = '/home/thais/Desktop/HackatonEMTU/gtfs_emtu/'
+
+data = '/home/thais/Desktop/HackatonEMTU/git/mixtape/datasets/gtfs_emtu/'
 
 def unquote(str):
 	if str[0] == '"' and str[-1] == '"':
@@ -31,14 +34,14 @@ def primarykey(db, table, key):
 		out[obj[key]] = obj
 	db[table] = out
 
-def trip_of(db, table, key):
-	for trip_id in db['trips'].keys():
-		trip = db["trips"][trip_id]
+def join(db, str, table, key):
+	for i in db[str].keys():
+		trip = db[str][i]
 		obj_id = trip[key]
 		obj = db[table][obj_id]
-		obj.setdefault("trips", [])
-		obj["trips"].append(trip_id)
-
+		print(obj)
+		obj.setdefault(str, [])
+		obj[str].append(i)
 
 db = {}
 for datafile in glob.glob(os.path.join(data, '*.txt')):
@@ -46,16 +49,22 @@ for datafile in glob.glob(os.path.join(data, '*.txt')):
 	fileLines = file.readlines()
 	table = datafile.replace(data,'')[:-4]
 	db[table] = parse(fileLines)
-#	json.dumps(db, sort_keys=True, indent=4)
+	json.dumps(db[table], sort_keys=True, indent=4)
 
 primarykey(db, "trips", "trip_id")
 primarykey(db, "shapes", "shape_id")
 primarykey(db, "routes", "route_id")
+primarykey(db, "agency", "agency_id")
+primarykey(db, "frequencies", "trip_id")
+primarykey(db, "stop_times", "trip_id")
+primarykey(db, "fare_attributes", "fare_id")
+primarykey(db, "fare_rules", "fare_id")
 
-trip_of(db, "shapes", "shape_id")
-trip_of(db, "routes", "route_id")
+join(db, "trips", "shapes", "shape_id")
+join(db, "trips", "routes", "route_id")
+join(db, "frequencies", "trips", "trip_id")
+join(db, "stop_times", "trips", "trip_id")	
+join(db, "routes", "agency", "agency_id")	
+join(db, "fare_attributes", "fare_rules", "fare_id")	
 
-print(json.dumps(db['routes'], sort_keys=True, indent=4))
-
-
-
+print(json.dumps(db["routes"], sort_keys=True, indent=4))
