@@ -1,31 +1,35 @@
 #!/usr/bin/env python
 
 import math
+import pyproj
 from glob import glob
 from simpledbf import Dbf5 as Dbf
 from shapefile import Reader as Shp
+from geopy.distance import distance
 
 trips = []
 shapes = []
 
-def dist(x, y):
-    lat1, lon1 = x[0], x[1]
-    lat2, lon2 = y[0], y[1]
-    p1 = math.radians(lat1)
-    p2 = math.radians(lat2)
-    dp = math.radians(lat2-lat1)
-    dl = math.radians(lon2-lon1)
-    a = math.sin(dp/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dl/2)**2
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-    return 6371000 * c
+sirgas = pyproj.Proj(init="epsg:31983")
+def convert(p):
+    a,b = sirgas(p[0], p[1], inverse=True)
+    return (b,a)
+# print(sirgas(-46.703022, -23.602714))
+# print(convert(sirgas(-46.703022, -23.602714)))
+def rescale(bb):
+    a,b = convert((bb[0], bb[1]))
+    c,d = convert((bb[2], bb[3]))
+    return (a,b,c,d)
 
 for name in glob('*.dbf'):
     dbf = Dbf(name, codec='iso-8859-1')
     shp = Shp(name.replace('.dbf','.shp'))
     shape_id = 0
-    mins = [
-    for s in shp.shapes():
-        print(s.bbox)
+    for sr in shp.shapeRecords():
+        s = sr.shape
+        r = sr.record
+        b = rescale(s.bbox)
+        b = s.bbox
         seq = 0
         shape_id += 1
         last = (0,0)
@@ -33,9 +37,9 @@ for name in glob('*.dbf'):
         for point in s.points:
             seq += 1
             d = 0
-            p = [coord for coord in point]
+            p = convert(point)
             if seq > 1:
-                d = dist(last, (p[0],p[1]))
+                d = distance(last, (p[0],p[1]))
             o = {
                 "shape_id": shape_id,
                 "shape_type": s.shapeType,
@@ -44,6 +48,6 @@ for name in glob('*.dbf'):
                 "shape_pt_sequence": seq,
                 "shape_dist_traveled": d
             }
-            # print(o)
+            print(o)
             last = (p[0],p[1])
             lastseq = seq
