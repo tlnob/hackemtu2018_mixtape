@@ -55,6 +55,7 @@ primarykey(db, "frequencies", "trip_id")
 primarykey(db, "stop_times", "trip_id")
 primarykey(db, "fare_attributes", "fare_id")
 primarykey(db, "fare_rules", "fare_id")
+primarykey(db, "stops", "stop_id")
 
 join(db, "trips", "shapes", "shape_id")
 join(db, "trips", "routes", "route_id")
@@ -62,6 +63,7 @@ join(db, "frequencies", "trips", "trip_id")
 join(db, "stop_times", "trips", "trip_id")	
 join(db, "routes", "agency", "agency_id")	
 join(db, "fare_attributes", "fare_rules", "fare_id")	
+join(db, "stop_times", "stops", "stop_id")
 
 
 print(json.dumps(db, sort_keys=True, indent=4))
