@@ -3,7 +3,7 @@ import glob, os, re, json
 #import numpy as np
 
 
-data = '/home/thais/Desktop/HackatonEMTU/git/mixtape/datasets/gtfs_emtu/'
+data = 'datasets/gtfs_emtu/'
 
 def unquote(str):
 	if str[0] == '"' and str[-1] == '"':
@@ -39,7 +39,6 @@ def join(db, str, table, key):
 		trip = db[str][i]
 		obj_id = trip[key]
 		obj = db[table][obj_id]
-		print(obj)
 		obj.setdefault(str, [])
 		obj[str].append(i)
 
@@ -49,7 +48,7 @@ for datafile in glob.glob(os.path.join(data, '*.txt')):
 	fileLines = file.readlines()
 	table = datafile.replace(data,'')[:-4]
 	db[table] = parse(fileLines)
-	json.dumps(db[table], sort_keys=True, indent=4)
+
 
 primarykey(db, "trips", "trip_id")
 primarykey(db, "shapes", "shape_id")
@@ -67,4 +66,5 @@ join(db, "stop_times", "trips", "trip_id")
 join(db, "routes", "agency", "agency_id")	
 join(db, "fare_attributes", "fare_rules", "fare_id")	
 
-print(json.dumps(db["routes"], sort_keys=True, indent=4))
+
+print(json.dumps(db, sort_keys=True, indent=4))
