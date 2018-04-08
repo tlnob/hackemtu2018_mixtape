@@ -1,5 +1,5 @@
-import glob, os, re
-from jsonify import convert
+import glob, os, re, json
+
 
 
 data = '/home/thais/Desktop/HackatonEMTU/gtfs_emtu/'
@@ -10,21 +10,29 @@ def unquote(str):
 	else:
 		return str
 
-#dir = os.listdir('/home/thais/Desktop/HackatonEMTU/gtfs_emtu')
-#print(dir)
-arr = {}
-for datafile in glob.glob(os.path.join(data, '*.txt')):
-	file = open(datafile, "r")
-	fileLines = file.readlines()
+def parse(fileLines):
 	first = True
 	attr = []
+	arr = []
 	for lines in fileLines:
 		if first:
 			attr = [unquote(x) for x in lines.strip().split(',')]
 			first = False
 		else:
 			lines = [unquote(x) for x in lines.strip().split(',')]
+			obj = {}
 			for i in range(len(attr)):
-				arr[attr[i]] = lines[i]
+				obj[attr[i]] = lines[i]
+			arr.append(obj)
+	return arr
 
-print(arr)
+db = {}
+for datafile in glob.glob(os.path.join(data, '*.txt')):
+	file = open(datafile, "r")
+	fileLines = file.readlines()
+	table = datafile.replace(data,'')[:-4]
+	db[table] = parse(fileLines)
+
+print(json.dumps(db, sort_keys=True, indent=4))
+
+
